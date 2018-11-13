@@ -1,0 +1,12 @@
+appdirs==1.4.3
+attrs==18.2.0
+black==18.9b0
+Click==7.0
+flake8==3.6.0
+mccabe==0.6.1
+numpy==1.15.4
+pycodestyle==2.4.0
+pyflakes==2.0.0
+scikit-learn==0.20.0
+scipy==1.1.0
+toml==0.10.0
