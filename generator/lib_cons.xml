@@ -1,0 +1,161 @@
+<dataset seed="123">
+    <attributes>        
+        <catAttr name="abortions">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="affirmative_action">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="capital_punishment">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="alternative_energies">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="euthanasia">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="global_warming">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="gun_control">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="immigrant_amnesty">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>        
+        <catAttr name="same_sex_marriage">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>   
+        <catAttr name="welfare">
+            <value>y</value>
+            <value>a</value>
+            <value>n</value>
+        </catAttr>
+    </attributes>
+    <missing rate="25"/>
+    <clusters>
+        <cluster class="liberal" size="400">
+            <categorical>
+                <value rate="500">y</value>
+                <value rate="30">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="200">y</value>
+                <value rate="30">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="20">y</value>
+                <value rate="250">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="400">y</value>
+                <value rate="10">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="450">y</value>
+                <value rate="20">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="550">y</value>
+                <value rate="5">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="350">y</value>
+                <value rate="25">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="200">y</value>
+                <value rate="50">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="600">y</value>
+                <value rate="20">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="300">y</value>
+                <value rate="50">n</value>
+                <rest rate="100"/>
+            </categorical>
+        </cluster>
+        <cluster class="conservative" size="600">
+            <categorical>
+                <value rate="10">y</value>
+                <value rate="700">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="50">y</value>
+                <value rate="300">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="300">y</value>
+                <value rate="40">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="50">y</value>
+                <value rate="200">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="20">y</value>
+                <value rate="400">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="200">y</value>
+                <value rate="50">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="10">y</value>
+                <value rate="500">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="5">y</value>
+                <value rate="600">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="40">y</value>
+                <value rate="600">n</value>
+                <rest rate="100"/>
+            </categorical>
+            <categorical>
+                <value rate="30">y</value>
+                <value rate="500">n</value>
+                <rest rate="100"/>
+            </categorical>
+        </cluster>
+    </clusters>
+</dataset>

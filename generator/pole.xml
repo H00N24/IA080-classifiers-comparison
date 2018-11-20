@@ -1,0 +1,59 @@
+<dataset seed="123" decimal="1">
+    <attributes>        
+        <numAttr name="a1"/>
+        <numAttr name="a2"/>
+        <numAttr name="a3"/>
+    </attributes>
+    <clusters>
+        <cluster class="c1" size="1400">
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-20" max="20"/>
+            </numerical>
+            <numerical>
+                <uniform min="-20" max="20"/>
+            </numerical>
+            <transformations>
+                <clipCircle center="0 0" dist="20" axes="1 2"/>
+                <rotate axes="0 1" angle="30"/>
+                <rotate axes="0 2" angle="-40"/>
+            </transformations>
+        </cluster>
+        <cluster class="c2" size="1200">
+            <numerical>
+                <uniform min="-70" max="70"/>
+            </numerical>
+            <numerical>
+                <uniform min="-40" max="40"/>
+            </numerical>
+            <numerical>
+                <uniform min="-40" max="40"/>
+            </numerical>
+            <transformations>
+                <eraseCircle center="0 0" dist="25" axes="1 2"/>
+                <clipCircle center="0 0" dist="40" axes="1 2"/>
+                <rotate axes="0 1" angle="30"/>
+                <rotate axes="0 2" angle="-40"/>
+            </transformations>
+        </cluster>
+	<!-- noise -->
+	<!--cluster class="c1" size="50">
+            <numerical>
+                <uniform min="-150" max="150"/>
+            </numerical>
+            <numerical>
+                <uniform min="-70" max="70"/>
+            </numerical>
+            <numerical>
+                <uniform min="-70" max="70"/>
+            </numerical>
+            <transformations>
+                <clipCircle center="0 0" dist="70" axes="1 2"/>
+                <rotate axes="0 1" angle="30"/>
+                <rotate axes="0 2" angle="-40"/>
+            </transformations-->
+        </cluster>
+    </clusters>
+</dataset>

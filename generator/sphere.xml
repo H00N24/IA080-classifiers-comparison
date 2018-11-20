@@ -1,0 +1,123 @@
+<dataset seed="123" decimal="1">
+    <attributes>        
+        <numAttr name="a1"/>
+        <numAttr name="a2"/>
+        <numAttr name="a3"/>
+        <numAttr name="a4"/>
+        <numAttr name="a5"/>
+        <numAttr name="a6"/>
+        <numAttr name="a7"/>
+        <numAttr name="a8"/>
+        <numAttr name="a9"/>
+        <numAttr name="a10"/>
+    </attributes>
+    <clusters>
+        <cluster class="c1" size="1000000">
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <transformations>
+                <clipCircle center="0 0 0 0 0 0 0 0 0 0" dist="87"/>
+            </transformations>
+        </cluster>
+        <cluster class="c2" size="1000000">
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <transformations>
+                <eraseCircle center="0 0 0 0 0 0 0 0 0 0" dist="87"/>
+                <clipCircle center="0 0 0 0 0 0 0 0 0 0" dist="96"/>
+            </transformations>
+        </cluster>
+	<!--cluster class="c3" size="1000000">
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <numerical>
+                <uniform min="-100" max="100"/>
+            </numerical>
+            <transformations>
+                <eraseCircle center="0 0 0 0 0 0 0 0 0 0" dist="96"/>
+                <clipCircle center="0 0 0 0 0 0 0 0 0 0" dist="100"/>
+            </transformations>
+        </cluster-->
+    </clusters>
+</dataset>
