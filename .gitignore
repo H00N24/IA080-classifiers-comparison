@@ -1,6 +1,8 @@
 # Data files
-data/*
-metal-data/*
+*.data
+*.names
+*.info
+*.descri.txt
 
 # Virtual env
 venv/*

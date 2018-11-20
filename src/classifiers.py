@@ -24,11 +24,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Process input arguments
 ap = argparse.ArgumentParser()
-ap.add_argument(
-    '--input', '-i',
-    required=True,
-    help="path to input data",
-)
+ap.add_argument("--input", "-i", required=True, help="path to input data")
 args = vars(ap.parse_args())
 
 
@@ -52,7 +48,7 @@ sets = (
     ("cancer", *datasets.load_breast_cancer(return_X_y=True)),
 )
 
-data_loader = DataLoader(args['input'])
+data_loader = DataLoader("metal-data/")
 
 cv = 5
 for set_name, X, y in data_loader.loaded_data:
@@ -77,6 +73,7 @@ for set_name, X, y in data_loader.loaded_data:
                     "macro_precision": make_scorer(precision_score, average="macro"),
                 }
             ),
+            error_score=np.nan,
         )
         for key, value in result.items():
             result[key] = np.mean(value).round(decimals=4)
