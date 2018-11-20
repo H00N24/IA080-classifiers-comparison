@@ -1,6 +1,7 @@
 from pprint import pprint
 
 import numpy as np
+import argparse
 
 from data_loader import DataLoader
 
@@ -20,6 +21,16 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
 # from sklearn.gaussian_process import GaussianProcessClassifier
+
+# Process input arguments
+ap = argparse.ArgumentParser()
+ap.add_argument(
+    '--input', '-i',
+    required=True,
+    help="path to input data",
+)
+args = vars(ap.parse_args())
+
 
 classifiers = [
     ["Nearest Neighbors", KNeighborsClassifier()],
@@ -41,7 +52,7 @@ sets = (
     ("cancer", *datasets.load_breast_cancer(return_X_y=True)),
 )
 
-data_loader = DataLoader("metal-data/")
+data_loader = DataLoader(args['input'])
 
 cv = 5
 for set_name, X, y in data_loader.loaded_data:
