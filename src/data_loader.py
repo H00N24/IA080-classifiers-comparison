@@ -1,16 +1,82 @@
-import os
-import re
-import sys
-
-import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OrdinalEncoder, StandardScaler, LabelEncoder
+from keras.preprocessing.image import img_to_array, load_img
+from datetime import datetime
+
+import numpy as np
+
+import glob
+import json
+import sys
+import os
+import re
 
 
 class DataLoader:
-    def __init__(self, data_dir: str, normalize_numerical: bool = False):
+
+    def get_image_data(self, data_dir, width=224, height=224, correct_dataset_size=True):
+        print("Loading image data...")
+        labels_dict = dict(
+            (category, i) for i, category in enumerate(
+                os.listdir(data_dir)
+            )
+        )
+
+        cat_counter = []
+        image_paths = []
+        for cat_path in glob.glob(data_dir + '/*'):
+            cat_list = [cat_path + '/' + image_name for image_name in os.listdir(cat_path)]
+            image_paths += cat_list
+            if correct_dataset_size:
+                cat_counter.append(len(cat_list))
+
+        # Correct dataset size
+        max_images = min(cat_counter) if correct_dataset_size else 0
+        #max_images = 20
+
+        num_of_images_per_category = dict((label, 0) for label in labels_dict)
+
+        image_labels = []
+        image_data = []
+        for path in image_paths:
+            label = path.split(os.path.sep)[-2]
+
+            # Correct dataset size
+            if correct_dataset_size and num_of_images_per_category[label] >= max_images:
+                continue
+
+            try:
+                image = load_img(path, target_size=(width, height))
+                image = img_to_array(image)
+                image_data.append(image)
+            except IOError:
+                print("Invalid image: " + path)
+                continue
+            image_labels.append(labels_dict[label])
+
+            if correct_dataset_size:
+                num_of_images_per_category[label] += 1
+        
+        image_data = np.array(image_data, dtype='float32')
+        image_labels = np.array(image_labels)
+
+        assert(len(image_data) == len(image_labels))
+
+        print("Loaded {0} images.".format(len(image_data)))
+
+        return (image_data, image_labels, labels_dict)
+
+    def get_metal_data(self, data_dir, normalize_numerical=False):
+        self._init_metal_data(data_dir, normalize_numerical)
+
+        for data_file_path, names_file_path in zip(self.data_files, self.names_files):
+            encoder, numeric = self._load_names_file(names_file_path)
+            X, y = self._load_data_file(data_file_path, encoder, numeric)
+            yield (data_file_path, X, y)
+
+    def _init_metal_data(self, data_dir, normalize_numerical):
         self.data_dir = data_dir
 
         files = os.listdir(self.data_dir)
@@ -29,19 +95,6 @@ class DataLoader:
                 ("onehot", OrdinalEncoder()),
             ]
         )
-
-    @property
-    def loaded_data(self) -> tuple:
-        """Data for classification
-
-        Returns:
-            tuple: (Data, Categories)
-        """
-
-        for data_file_path, names_file_path in zip(self.data_files, self.names_files):
-            encoder, numeric = self._load_names_file(names_file_path)
-            X, y = self._load_data_file(data_file_path, encoder, numeric)
-            yield (data_file_path, X, y)
 
     def _load_names_file(self, names_file_path: str) -> tuple:
         """Read categories and creates pipeline for data transformation
@@ -124,3 +177,34 @@ class DataLoader:
             # y = transformed_data[:, -1:].flatten()
 
             return (X, y)
+
+
+class Saver():
+
+    def __init__(self):
+        self.datetime_now = datetime.now()
+
+    def save_output(self, results, set_name):
+        path = 'output/'
+        if not os.path.exists(path):
+            os.mkdir(path)
+
+        path += self.datetime_now.strftime("%Y-%m-%d-%H:%M:%S") + '/'
+        if not os.path.exists(path):
+            os.mkdir(path)
+
+        path += set_name.replace('.', '-') + '.json'
+        write_option = 'w' if not os.path.exists(path) else 'a'
+        
+        json_file = open(path, write_option)
+        json_file.write(
+            json.dumps(
+                results,
+                sort_keys=False,
+                indent=4,
+                separators=(',', ':')
+            )
+        )
+        json_file.close()
+
+        print("-- Result saved! --")

@@ -3,6 +3,10 @@
 *.names
 *.info
 *.descri.txt
+*.jpg
+*.jpeg
+*.JPG
+*.png
 
 # Virtual env
 venv/*

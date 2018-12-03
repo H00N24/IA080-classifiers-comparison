@@ -3,12 +3,13 @@ from pprint import pprint
 import numpy as np
 import argparse
 
-from data_loader import DataLoader
+from data_loader import DataLoader, Saver
 
 from sklearn import datasets
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import precision_score, make_scorer, accuracy_score
+from keras.applications.resnet50 import preprocess_input
 
 # Classifiers
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
@@ -19,14 +20,19 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
+from keras.applications.resnet50 import ResNet50
 
 # from sklearn.gaussian_process import GaussianProcessClassifier
 
 # Process input arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("--input", "-i", required=True, help="path to input data")
+ap.add_argument("--metal", "-m", help="path to metal data")
+ap.add_argument("--image", "-i", help="path to image data")
 args = vars(ap.parse_args())
 
+if not args['metal'] and not args['image']:
+    print("ERROR: No input data")
+    exit(-1)
 
 classifiers = [
     ["Nearest Neighbors", KNeighborsClassifier()],
@@ -48,34 +54,85 @@ sets = (
     ("cancer", *datasets.load_breast_cancer(return_X_y=True)),
 )
 
-data_loader = DataLoader("metal-data/")
+metal_data = []
+if args['metal']:
+    print("Loading metal data...")
+    metal_data = DataLoader().get_metal_data(args['metal'])
+    print("Loading done")
 
-cv = 5
-for set_name, X, y in data_loader.loaded_data:
+saver = Saver()
+
+# METAL DATA
+for set_name, X, y in metal_data:
     print("-" * 5, set_name, "-" * 5)
-    results = {}
 
     for name, clf in classifiers:
-        if isinstance(clf, MLPClassifier):
-            pipeline = make_pipeline(StandardScaler(), clf)
-        else:
-            pipeline = clf
-        result = cross_validate(
-            clf,
-            X,
-            y,
-            cv=5,
-            n_jobs=4,
-            scoring=(
-                {
-                    "accuracy": make_scorer(accuracy_score),
-                    "micro_precision": make_scorer(precision_score, average="micro"),
-                    "macro_precision": make_scorer(precision_score, average="macro"),
-                }
-            ),
-            error_score=np.nan,
-        )
+        print('[{0}]'.format(name))
+        try:
+            result = cross_validate(
+                clf,
+                X,
+                y,
+                cv=5,
+                n_jobs=4,
+                scoring=(
+                    {
+                        "accuracy": make_scorer(accuracy_score),
+                        "micro_precision": make_scorer(precision_score, average="micro"),
+                        "macro_precision": make_scorer(precision_score, average="macro"),
+                    }
+                ),
+                error_score=np.nan,
+                #verbose=True,
+            )
+        except KeyboardInterrupt:
+            print("INTERRUPTED")
+            continue
+
+        results = {}
         for key, value in result.items():
             result[key] = np.mean(value).round(decimals=4)
         results[name] = result
-    pprint(results)
+
+        # Save result
+        saver.save_output(results, set_name)
+
+# IMAGE DATA
+if args['image']:
+    # Load & preprocess data
+    image_data, image_labels, labels_dict = DataLoader().get_image_data(args['image'])
+    image_data = preprocess_input(image_data)
+
+    print("RetNet50...")
+    features = ResNet50(weights='imagenet').predict(image_data)
+    print("Prediction DONE.")
+    for name, clf in classifiers:
+        print('[{0}]'.format(name))
+        try:
+            result = cross_validate(
+                clf,
+                features,
+                image_labels,
+                cv=5,
+                n_jobs=4,
+                scoring=(
+                    {
+                        "accuracy": make_scorer(accuracy_score),
+                        "micro_precision": make_scorer(precision_score, average="micro"),
+                        "macro_precision": make_scorer(precision_score, average="macro"),
+                    }
+                ),
+                error_score=np.nan,
+                #verbose=True,
+            )
+        except KeyboardInterrupt:
+            print("INTERRUPTED")
+            continue
+
+        results = {}
+        for key, value in result.items():
+            result[key] = np.mean(value).round(decimals=4)
+        results[name] = result
+
+        # Save result
+        saver.save_output(results, 'weapon-data')
