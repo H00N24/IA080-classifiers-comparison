@@ -58,7 +58,7 @@ class DataLoader:
 
             if correct_dataset_size:
                 num_of_images_per_category[label] += 1
-        
+
         image_data = np.array(image_data, dtype='float32')
         image_labels = np.array(image_labels)
 
@@ -73,8 +73,8 @@ class DataLoader:
 
         for data_file_path, names_file_path in zip(self.data_files, self.names_files):
             encoder, numeric = self._load_names_file(names_file_path)
-            X, y = self._load_data_file(data_file_path, encoder, numeric)
-            yield (data_file_path, X, y)
+            X, y, n_classes = self._load_data_file(data_file_path, encoder, numeric)
+            yield (data_file_path, X, y, n_classes)
 
     def _init_metal_data(self, data_dir, normalize_numerical):
         self.data_dir = data_dir
@@ -176,7 +176,7 @@ class DataLoader:
             y = lab_enc.fit_transform(labels)
             # y = transformed_data[:, -1:].flatten()
 
-            return (X, y)
+            return (X, y, len(lab_enc.classes_))
 
 
 class Saver():
@@ -195,7 +195,7 @@ class Saver():
 
         path += set_name.replace('.', '-') + '.json'
         write_option = 'w' if not os.path.exists(path) else 'a'
-        
+
         json_file = open(path, write_option)
         json_file.write(
             json.dumps(

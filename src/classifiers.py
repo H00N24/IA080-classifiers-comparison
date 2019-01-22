@@ -44,7 +44,7 @@ classifiers = [
     ["Neural Net", MLPClassifier(max_iter=200)],
     ["AdaBoost", AdaBoostClassifier()],
     ["Naive Bayes", GaussianNB()],
-    ["QDA", QuadraticDiscriminantAnalysis()],
+    ["QDA", QuadraticDiscriminantAnalysis()]
 ]
 
 sets = (
@@ -63,7 +63,7 @@ if args['metal']:
 saver = Saver()
 
 # METAL DATA
-for set_name, X, y in metal_data:
+for set_name, X, y, n_classes in metal_data:
     print("-" * 5, set_name, "-" * 5)
 
     for name, clf in classifiers:
