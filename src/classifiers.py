@@ -107,15 +107,23 @@ for set_name, X, y, y_bin in metal_data:
     for params in networks:
 
         model = KerasWrapper(X.shape[1], y_bin.shape[1], **params)
-        skf = StratifiedKFold(n_splits=5, shuffle=True)
 
-        for (train_index, test_index) in skf.split(X, y):
-            X_train, X_test = X[train_index], X[test_index]
-            y_train, y_test = y_bin[train_index], y_bin[test_index]
+        try:
 
-            model.fit(X_train, y_train)
-            print('Done')
-            print(model.evaluate(X_test, y_test))
+            skf = StratifiedKFold(n_splits=5, shuffle=True)
+
+            for (train_index, test_index) in skf.split(X, y):
+                X_train, X_test = X[train_index], X[test_index]
+                y_train, y_test = y_bin[train_index], y_bin[test_index]
+
+                model.fit(X_train, y_train)
+                print('Done')
+                print(model.evaluate(X_test, y_test))
+
+        except KeyboardInterrupt:
+            print("INTERRUPTED")
+            continue
+        
 
 # IMAGE DATA
 if args['image']:
