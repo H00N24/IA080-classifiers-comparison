@@ -4,6 +4,7 @@ import numpy as np
 import argparse
 
 from data_loader import DataLoader, Saver
+from neural_networks import create_network
 
 from sklearn import datasets
 from sklearn.pipeline import make_pipeline
@@ -14,7 +15,7 @@ from keras.applications.resnet50 import preprocess_input
 # Classifiers
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
-from sklearn.model_selection import cross_validate
+from sklearn.model_selection import cross_validate, StratifiedKFold
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
@@ -54,6 +55,10 @@ sets = (
     ("cancer", *datasets.load_breast_cancer(return_X_y=True)),
 )
 
+networks = [
+    dict()
+]
+
 metal_data = []
 if args['metal']:
     print("Loading metal data...")
@@ -63,39 +68,55 @@ if args['metal']:
 saver = Saver()
 
 # METAL DATA
-for set_name, X, y, n_classes in metal_data:
+for set_name, X, y, y_bin in metal_data:
     print("-" * 5, set_name, "-" * 5)
 
-    for name, clf in classifiers:
-        print('[{0}]'.format(name))
-        try:
-            result = cross_validate(
-                clf,
-                X,
-                y,
-                cv=5,
-                n_jobs=4,
-                scoring=(
-                    {
-                        "accuracy": make_scorer(accuracy_score),
-                        "micro_precision": make_scorer(precision_score, average="micro"),
-                        "macro_precision": make_scorer(precision_score, average="macro"),
-                    }
-                ),
-                error_score=np.nan,
-                #verbose=True,
-            )
-        except KeyboardInterrupt:
-            print("INTERRUPTED")
-            continue
+    print(y_bin.shape)
 
-        results = {}
-        for key, value in result.items():
-            result[key] = np.mean(value).round(decimals=4)
-        results[name] = result
+    # for name, clf in classifiers:
+    #     print('[{0}]'.format(name))
+    #     try:
+    #         result = cross_validate(
+    #             clf,
+    #             X,
+    #             y,
+    #             cv=5,
+    #             n_jobs=4,
+    #             scoring=(
+    #                 {
+    #                     "accuracy": make_scorer(accuracy_score),
+    #                     "micro_precision": make_scorer(precision_score, average="micro"),
+    #                     "macro_precision": make_scorer(precision_score, average="macro"),
+    #                 }
+    #             ),
+    #             error_score=np.nan,
+    #             #verbose=True,
+    #         )
+    #     except KeyboardInterrupt:
+    #         print("INTERRUPTED")
+    #         continue
+    #
+    #     results = {}
+    #     for key, value in result.items():
+    #         result[key] = np.mean(value).round(decimals=4)
+    #     results[name] = result
+    #
+    #     # Save result
+    #     saver.save_output(results, set_name)
 
-        # Save result
-        saver.save_output(results, set_name)
+    for params in networks:
+
+        model = create_network(X.shape[1], y_bin.shape[1], params)
+        skf = StratifiedKFold(n_splits=5, shuffle=True)
+
+        for (train_index, test_index) in skf.split(X, y_bin):
+            X_train, X_test = X[train_index], X[test_index]
+            y_train, y_test = y_bin[train_index], y_bin[test_index]
+
+            print(X_train.shape, y_train.shape)
+
+            model.fit(X_train, y_train)
+            print(model.predict(X_test, y_test))
 
 # IMAGE DATA
 if args['image']:

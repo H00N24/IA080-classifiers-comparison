@@ -1,7 +1,7 @@
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler, LabelEncoder
+from sklearn.preprocessing import OrdinalEncoder, StandardScaler, LabelEncoder, LabelBinarizer
 from keras.preprocessing.image import img_to_array, load_img
 from datetime import datetime
 
@@ -172,11 +172,15 @@ class DataLoader:
 
             transformed_data = encoder.fit_transform(data)
             X = transformed_data[:, :-1]
+
             lab_enc = LabelEncoder()
+            lab_bin = LabelBinarizer()
+
             y = lab_enc.fit_transform(labels)
+            y_bin = lab_bin.fit_transform(labels)
             # y = transformed_data[:, -1:].flatten()
 
-            return (X, y, len(lab_enc.classes_))
+            return (X, y, y_bin)
 
 
 class Saver():
