@@ -15,7 +15,7 @@ from keras.applications.resnet50 import preprocess_input
 # Classifiers
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
-from sklearn.model_selection import cross_validate, StratifiedKFold
+from sklearn.model_selection import cross_validate
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
@@ -106,24 +106,16 @@ for set_name, X, y, y_bin in metal_data:
 
     for params in networks:
 
-        model = KerasWrapper(X.shape[1], y_bin.shape[1], **params)
+        results = {}
 
         try:
-
-            skf = StratifiedKFold(n_splits=5, shuffle=True)
-
-            for (train_index, test_index) in skf.split(X, y):
-                X_train, X_test = X[train_index], X[test_index]
-                y_train, y_test = y_bin[train_index], y_bin[test_index]
-
-                model.fit(X_train, y_train)
-                print('Done')
-                print(model.evaluate(X_test, y_test))
-
+            model = KerasWrapper(X.shape[1], y_bin.shape[1], **params)
+            results = model.cross_validate(X, y, y_bin)
         except KeyboardInterrupt:
             print("INTERRUPTED")
             continue
-        
+
+        saver.save_output(results, set_name)
 
 # IMAGE DATA
 if args['image']:
