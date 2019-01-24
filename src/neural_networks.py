@@ -79,8 +79,8 @@ class KerasWrapper:
 
             result = self._model.evaluate(X_test, y_test)
 
-            test_accuracy = result[1]
-            test_precision = result[2]
+            test_accuracy.append(result[1])
+            test_precision.append(result[2])
 
         results = {
             "fit_time": np.mean(fit_times).round(decimals=4),
