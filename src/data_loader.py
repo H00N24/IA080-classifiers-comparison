@@ -34,7 +34,6 @@ class DataLoader:
 
         # Correct dataset size
         max_images = min(cat_counter) if correct_dataset_size else 0
-        #max_images = 20
 
         num_of_images_per_category = dict((label, 0) for label in labels_dict)
 
@@ -54,19 +53,26 @@ class DataLoader:
             except IOError:
                 print("Invalid image: " + path)
                 continue
-            image_labels.append(labels_dict[label])
+            #image_labels.append(labels_dict[label])
+            image_labels.append(label)
 
             if correct_dataset_size:
                 num_of_images_per_category[label] += 1
 
         image_data = np.array(image_data, dtype='float32')
-        image_labels = np.array(image_labels)
+        #image_labels = np.array(image_labels)
 
         assert(len(image_data) == len(image_labels))
 
         print("Loaded {0} images.".format(len(image_data)))
 
-        return (image_data, image_labels, labels_dict)
+        lab_enc = LabelEncoder()
+        lab_bin = LabelBinarizer()
+
+        y = lab_enc.fit_transform(image_labels)
+        y_bin = lab_bin.fit_transform(image_labels)
+
+        return (image_data, y, y_bin)
 
     def get_metal_data(self, data_dir, normalize_numerical=False):
         self._init_metal_data(data_dir, normalize_numerical)

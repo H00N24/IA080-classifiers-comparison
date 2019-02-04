@@ -120,7 +120,7 @@ for set_name, X, y, y_bin in metal_data:
 # IMAGE DATA
 if args['image']:
     # Load & preprocess data
-    image_data, image_labels, labels_dict = DataLoader().get_image_data(args['image'])
+    image_data, image_labels, y_bin = DataLoader().get_image_data(args['image'])
     image_data = preprocess_input(image_data)
 
     print("RetNet50...")
@@ -155,4 +155,18 @@ if args['image']:
         results[name] = result
 
         # Save result
+        saver.save_output(results, 'weapon-data')
+
+    for params in networks:
+
+        results = {}
+
+        try:
+            model = KerasWrapper(
+                features.shape[1], y_bin.shape[1], **params)
+            results = model.cross_validate(features, image_labels, y_bin)
+        except KeyboardInterrupt:
+            print("INTERRUPTED")
+            continue
+
         saver.save_output(results, 'weapon-data')
