@@ -1,7 +1,12 @@
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler, LabelEncoder, LabelBinarizer
+from sklearn.preprocessing import (
+    OrdinalEncoder,
+    StandardScaler,
+    LabelEncoder,
+    LabelBinarizer,
+)
 from keras.preprocessing.image import img_to_array, load_img
 from datetime import datetime
 
@@ -15,19 +20,20 @@ import re
 
 
 class DataLoader:
-
-    def get_image_data(self, data_dir, width=224, height=224, correct_dataset_size=True):
+    def get_image_data(
+        self, data_dir, width=224, height=224, correct_dataset_size=True
+    ):
         print("Loading image data...")
         labels_dict = dict(
-            (category, i) for i, category in enumerate(
-                os.listdir(data_dir)
-            )
+            (category, i) for i, category in enumerate(os.listdir(data_dir))
         )
 
         cat_counter = []
         image_paths = []
-        for cat_path in glob.glob(data_dir + '/*'):
-            cat_list = [cat_path + '/' + image_name for image_name in os.listdir(cat_path)]
+        for cat_path in glob.glob(data_dir + "/*"):
+            cat_list = [
+                cat_path + "/" + image_name for image_name in os.listdir(cat_path)
+            ]
             image_paths += cat_list
             if correct_dataset_size:
                 cat_counter.append(len(cat_list))
@@ -53,16 +59,16 @@ class DataLoader:
             except IOError:
                 print("Invalid image: " + path)
                 continue
-            #image_labels.append(labels_dict[label])
+            # image_labels.append(labels_dict[label])
             image_labels.append(label)
 
             if correct_dataset_size:
                 num_of_images_per_category[label] += 1
 
-        image_data = np.array(image_data, dtype='float32')
-        #image_labels = np.array(image_labels)
+        image_data = np.array(image_data, dtype="float16")
+        # image_labels = np.array(image_labels)
 
-        assert(len(image_data) == len(image_labels))
+        assert len(image_data) == len(image_labels)
 
         print("Loaded {0} images.".format(len(image_data)))
 
@@ -189,31 +195,25 @@ class DataLoader:
             return (X, y, y_bin)
 
 
-class Saver():
-
+class Saver:
     def __init__(self):
         self.datetime_now = datetime.now()
 
     def save_output(self, results, set_name):
-        path = 'output/'
+        path = "output/"
         if not os.path.exists(path):
             os.mkdir(path)
 
-        path += self.datetime_now.strftime("%Y-%m-%d-%H:%M:%S") + '/'
+        path += self.datetime_now.strftime("%Y-%m-%d-%H:%M:%S") + "/"
         if not os.path.exists(path):
             os.mkdir(path)
 
-        path += set_name.replace('.', '-') + '.json'
-        write_option = 'w' if not os.path.exists(path) else 'a'
+        path += set_name.replace(".", "-") + ".json"
+        write_option = "w" if not os.path.exists(path) else "a"
 
         json_file = open(path, write_option)
         json_file.write(
-            json.dumps(
-                results,
-                sort_keys=False,
-                indent=4,
-                separators=(',', ':')
-            )
+            json.dumps(results, sort_keys=False, indent=4, separators=(",", ":"))
         )
         json_file.close()
 
