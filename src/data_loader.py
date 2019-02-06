@@ -14,7 +14,6 @@ import numpy as np
 
 import glob
 import json
-import sys
 import os
 import re
 
@@ -23,7 +22,7 @@ class DataLoader:
     def get_image_data(
         self, data_dir, width=224, height=224, correct_dataset_size=True
     ):
-        print("Loading image data...")
+        # print("Loading image data...")
         labels_dict = dict(
             (category, i) for i, category in enumerate(os.listdir(data_dir))
         )
@@ -57,7 +56,7 @@ class DataLoader:
                 image = img_to_array(image)
                 image_data.append(image)
             except IOError:
-                print("Invalid image: " + path)
+                # print("Invalid image: " + path)
                 continue
             # image_labels.append(labels_dict[label])
             image_labels.append(label)
@@ -70,7 +69,7 @@ class DataLoader:
 
         assert len(image_data) == len(image_labels)
 
-        print("Loaded {0} images.".format(len(image_data)))
+        # print("Loaded {0} images.".format(len(image_data)))
 
         lab_enc = LabelEncoder()
         lab_bin = LabelBinarizer()
@@ -80,18 +79,18 @@ class DataLoader:
 
         return (image_data, y, y_bin)
 
-    def get_metal_data(self, data_dir, normalize_numerical=False):
-        self._init_metal_data(data_dir, normalize_numerical)
+    def get_metal_data(self, data_dir, dataset_str, normalize_numerical=False):
+        self._init_metal_data(data_dir, dataset_str, normalize_numerical)
 
         for data_file_path, names_file_path in zip(self.data_files, self.names_files):
             encoder, numeric = self._load_names_file(names_file_path)
             X, y, n_classes = self._load_data_file(data_file_path, encoder, numeric)
             yield (data_file_path, X, y, n_classes)
 
-    def _init_metal_data(self, data_dir, normalize_numerical):
+    def _init_metal_data(self, data_dir, dataset_str, normalize_numerical):
         self.data_dir = data_dir
 
-        files = os.listdir(self.data_dir)
+        files = [x for x in os.listdir(self.data_dir) if dataset_str in x]
         self.data_files = sorted([x for x in files if x.endswith(".data")])
         self.names_files = sorted([x for x in files if x.endswith(".names")])
 
@@ -131,8 +130,8 @@ class DataLoader:
 
                 res = re.search(r"^(?P<name>.*):\s*(?P<types>.*)\.", line)
                 if not res:
-                    print("Error:", names_file_path, file=sys.stderr)
-                    print("Error:", line, file=sys.stderr)
+                    # print("Error:", names_file_path, file=sys.stderr)
+                    # print("Error:", line, file=sys.stderr)
                     continue
 
                 types = res.group("types").strip()
@@ -200,6 +199,19 @@ class Saver:
         self.datetime_now = datetime.now()
 
     def save_output(self, results, set_name):
+        for key, item in results.items():
+            metrics = ("fit_time", "test_accuracy", "train_accuracy")
+            print(
+                set_name[:-5],
+                key,
+                ";".join([str(item[x]) for x in metrics]),
+                sep=";",
+                flush=True,
+            )
+            exit(0)
+        # pprint(results)
+
+    def _save_output(self, results, set_name):
         path = "output/"
         if not os.path.exists(path):
             os.mkdir(path)
@@ -217,4 +229,4 @@ class Saver:
         )
         json_file.close()
 
-        print("-- Result saved! --")
+        # print("-- Result saved! --")

@@ -27,14 +27,14 @@ def as_keras_metric(method):
 
 class KerasWrapper:
     def __init__(
-        self, n_inputs, n_outputs, layers, act_hidden_layers, act_output_layer, loss
+        self, n_inputs, n_outputs, layers, act_hidden_layers, act_output_layer_loss
     ):
         self._n_inputs = n_inputs
         self._n_outputs = n_outputs
         self._layers = layers
         self._act_hidden_layers = act_hidden_layers
-        self._act_output_layer = act_output_layer
-        self._loss = loss
+        self._act_output_layer = act_output_layer_loss[0]
+        self._loss = act_output_layer_loss[1]
         self._create_model()
 
     def _create_model(self):
@@ -68,7 +68,7 @@ class KerasWrapper:
         )
 
     def _fit(self, X_train, y_train):
-        return self._model.fit(X_train, y_train)
+        return self._model.fit(X_train, y_train, verbose=0)
 
     def cross_validate(self, X, y, y_bin, splits=5):
         skf = StratifiedKFold(n_splits=splits, shuffle=True)
@@ -95,14 +95,14 @@ class KerasWrapper:
             y_train, y_test = y_bin[train_index], y_bin[test_index]
 
             history = self._model.fit(
-                X_train, y_train, epochs=20, callbacks=[time_callback]
+                X_train, y_train, epochs=20, verbose=0, callbacks=[time_callback]
             )
 
             fit_times.append(time_callback.time)
             train_accuracy.append(history.history["acc"][-1])
             train_precision.append(history.history["precision"][-1])
 
-            result = self._model.evaluate(X_test, y_test)
+            result = self._model.evaluate(X_test, y_test, verbose=0)
 
             test_accuracy.append(result[1])
             test_precision.append(result[2])
@@ -110,9 +110,9 @@ class KerasWrapper:
         results = {
             "fit_time": np.mean(fit_times).round(decimals=4),
             "train_accuracy": np.mean(train_accuracy).round(decimals=4),
-            "train_precision": np.mean(train_precision).round(decimals=4),
+            # "train_precision": np.mean(train_precision).round(decimals=4),
             "test_accuracy": np.mean(test_accuracy).round(decimals=4),
-            "test_precision": np.mean(test_precision).round(decimals=4),
+            # "test_precision": np.mean(test_precision).round(decimals=4),
         }
 
         return {self.name(): results}
@@ -121,6 +121,10 @@ class KerasWrapper:
         return "NN-{}-{}-{}-{}".format(
             self._layers, self._act_hidden_layers, self._act_output_layer, self._loss
         )
+
+
+def create_name(layers, act_hidden, act_output_loss):
+    return "NN-{}-{}-{}-{}".format(layers, act_hidden, *act_output_loss)
 
 
 """https://stackoverflow.com/a/43186440/3394494"""
