@@ -4,7 +4,7 @@ from itertools import product, chain
 
 
 # 10 minutes
-TIMEOUT = 10 * 60
+TIMEOUT = 10 * 60 * 60
 
 classifier_names = (
     "Nearest Neighbors",
@@ -45,7 +45,7 @@ datasets = chain(
     )
 )
 
-print("Dataset;Classifier;Fit time;Test accuracy;Train accuracy")
+print("Dataset;Classifier;Fit time;Test accuracy;Train accuracy", flush=True)
 
 for dataset_data, name in product(datasets, classifier_names):
     command = [
@@ -66,4 +66,3 @@ for dataset_data, name in product(datasets, classifier_names):
         e
         print(dataset_data[1], name, TIMEOUT, 0, 0, sep=";", flush=True)
         continue
-
