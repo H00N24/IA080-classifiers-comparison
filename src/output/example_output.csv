@@ -1,0 +1,574 @@
+Dataset;Classifier;Fit time;Test accuracy;Train accuracy
+adult;Nearest Neighbors;2;0;0
+adult;Linear SVM;2;0;0
+adult;RBF SVM;2;0;0
+adult;Gaussian Process;2;0;0
+adult;Decision Tree;2;0;0
+adult;Random Forest;2;0;0
+adult;Neural Net;2;0;0
+adult;AdaBoost;2;0;0
+adult;Naive Bayes;2;0;0
+adult;QDA;2;0;0
+adult;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+adult;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+adult;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+adult;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+adult;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+adult;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+allbp;Nearest Neighbors;2;0;0
+allbp;Linear SVM;2;0;0
+allbp;RBF SVM;2;0;0
+allbp;Gaussian Process;2;0;0
+allbp;Decision Tree;0.0086;0.974;1.0
+allbp;Decision Tree;2;0;0
+allbp;Random Forest;2;0;0
+allbp;Neural Net;2;0;0
+allbp;AdaBoost;2;0;0
+allbp;Naive Bayes;0.0017;0.2484;0.2581
+allbp;QDA;2;0;0
+allbp;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+allbp;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+allbp;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+allbp;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+allbp;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+allbp;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+ann;Nearest Neighbors;2;0;0
+ann;Linear SVM;2;0;0
+ann;RBF SVM;2;0;0
+ann;Gaussian Process;2;0;0
+ann;Decision Tree;2;0;0
+ann;Random Forest;2;0;0
+ann;Neural Net;2;0;0
+ann;AdaBoost;2;0;0
+ann;Naive Bayes;2;0;0
+ann;QDA;2;0;0
+ann;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+ann;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+ann;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+ann;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+ann;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+ann;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+australian;Nearest Neighbors;0.0006;0.6755;0.7652
+australian;Linear SVM;2;0;0
+australian;RBF SVM;2;0;0
+australian;Gaussian Process;2;0;0
+australian;Decision Tree;0.0019;0.8175;1.0
+australian;Random Forest;0.1036;0.8507;1.0
+australian;Random Forest;2;0;0
+australian;Neural Net;2;0;0
+australian;AdaBoost;2;0;0
+australian;Naive Bayes;2;0;0
+australian;QDA;0.0008;0.8361;0.8652
+australian;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+australian;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+australian;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+australian;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+australian;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+byzantine;Nearest Neighbors;2;0;0
+byzantine;Linear SVM;2;0;0
+byzantine;RBF SVM;2;0;0
+byzantine;Gaussian Process;2;0;0
+byzantine;Decision Tree;2;0;0
+byzantine;Random Forest;2;0;0
+byzantine;Neural Net;2;0;0
+byzantine;AdaBoost;2;0;0
+byzantine;Naive Bayes;2;0;0
+byzantine;QDA;2;0;0
+byzantine;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+byzantine;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+byzantine;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+byzantine;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+byzantine;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+byzantine;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+diabetes;Nearest Neighbors;0.0004;0.7032;0.8021
+diabetes;Linear SVM;2;0;0
+diabetes;RBF SVM;0.0112;0.7226;0.8551
+diabetes;Gaussian Process;2;0;0
+diabetes;Decision Tree;2;0;0
+diabetes;Random Forest;2;0;0
+diabetes;Neural Net;0.1386;0.6536;0.6979
+diabetes;Neural Net;2;0;0
+diabetes;AdaBoost;2;0;0
+diabetes;Naive Bayes;0.0005;0.767;0.7679
+diabetes;QDA;0.0005;0.75;0.7669
+diabetes;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+diabetes;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+diabetes;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+diabetes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+fluid;Nearest Neighbors;0.0009;0.7259;0.8906
+fluid;Linear SVM;2;0;0
+fluid;RBF SVM;2;0;0
+fluid;Gaussian Process;2;0;0
+fluid;Decision Tree;0.0009;0.9075;1.0
+fluid;Random Forest;0.093;0.9341;1.0
+fluid;Neural Net;2;0;0
+fluid;AdaBoost;0.0461;0.6155;0.6162
+fluid;AdaBoost;2;0;0
+fluid;Naive Bayes;0.0008;0.879;0.9093
+fluid;QDA;0.0025;0.8997;0.9777
+fluid;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+fluid;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+fluid;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+fluid;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+fluid;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+fluid;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+german_cont;Nearest Neighbors;0.0004;0.6675;0.7662
+german_cont;Linear SVM;0.0117;0.7;0.7
+german_cont;RBF SVM;2;0;0
+german_cont;Gaussian Process;2;0;0
+german_cont;Decision Tree;0.0025;0.6325;0.9959
+german_cont;Random Forest;2;0;0
+german_cont;Neural Net;2;0;0
+german_cont;AdaBoost;2;0;0
+german_cont;Naive Bayes;0.0009;0.715;0.7138
+german_cont;Naive Bayes;2;0;0
+german_cont;QDA;0.0005;0.7188;0.7275
+german_cont;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+german_cont;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+german_cont;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+german_cont;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+german_f;Nearest Neighbors;0.0006;0.6675;0.7662
+german_f;Linear SVM;0.0129;0.7;0.7
+german_f;RBF SVM;0.0129;0.7012;0.7472
+german_f;Gaussian Process;2;0;0
+german_f;Decision Tree;0.0013;0.6312;0.9959
+german_f;Decision Tree;2;0;0
+german_f;Random Forest;0.0825;0.705;0.9959
+german_f;Neural Net;2;0;0
+german_f;AdaBoost;2;0;0
+german_f;Naive Bayes;0.0005;0.715;0.7138
+german_f;Naive Bayes;2;0;0
+german_f;QDA;0.0005;0.7188;0.7275
+german_f;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+german_f;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+german_f;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+german_n;Nearest Neighbors;0.0007;0.7188;0.8109
+german_n;Linear SVM;0.0191;0.7462;0.7644
+german_n;RBF SVM;0.0156;0.7125;0.7641
+german_n;Gaussian Process;2;0;0
+german_n;Decision Tree;2;0;0
+german_n;Random Forest;2;0;0
+german_n;Neural Net;2;0;0
+german_n;AdaBoost;2;0;0
+german_n;Naive Bayes;0.0006;0.7288;0.7472
+german_n;QDA;0.0015;0.7288;0.8097
+german_n;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+german_n;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+german_n;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+iris;Nearest Neighbors;0.0003;0.9467;0.965
+iris;Linear SVM;0.0005;0.8867;0.9167
+iris;RBF SVM;0.0005;0.9467;0.9617
+iris;Gaussian Process;2;0;0
+iris;Decision Tree;2;0;0
+iris;Random Forest;0.0507;0.9333;1.0
+iris;Random Forest;2;0;0
+iris;Neural Net;0.1026;0.9533;0.9583
+iris;AdaBoost;0.0336;0.7467;0.7617
+iris;Naive Bayes;0.0005;0.88;0.8917
+iris;QDA;0.0004;0.96;0.9483
+iris;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+iris;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+iris;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+iris;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+iris;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+iris;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+letter;Nearest Neighbors;2;0;0
+letter;Linear SVM;2;0;0
+letter;RBF SVM;2;0;0
+letter;Gaussian Process;2;0;0
+letter;Decision Tree;2;0;0
+letter;Random Forest;2;0;0
+letter;Neural Net;2;0;0
+letter;AdaBoost;2;0;0
+letter;Naive Bayes;2;0;0
+letter;QDA;2;0;0
+letter;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+letter;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+letter;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+letter;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+letter;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+letter;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+optical;Nearest Neighbors;2;0;0
+optical;Linear SVM;2;0;0
+optical;RBF SVM;2;0;0
+optical;Gaussian Process;2;0;0
+optical;Decision Tree;2;0;0
+optical;Random Forest;2;0;0
+optical;Neural Net;2;0;0
+optical;AdaBoost;2;0;0
+optical;Naive Bayes;2;0;0
+optical;QDA;2;0;0
+optical;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+optical;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+optical;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+optical;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+optical;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+optical;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+page;Nearest Neighbors;0.002;0.9433;0.9675
+page;Nearest Neighbors;2;0;0
+page;Linear SVM;2;0;0
+page;RBF SVM;2;0;0
+page;Gaussian Process;2;0;0
+page;Decision Tree;2;0;0
+page;Random Forest;2;0;0
+page;Neural Net;2;0;0
+page;AdaBoost;2;0;0
+page;Naive Bayes;0.0016;0.8841;0.9094
+page;QDA;0.002;0.9258;0.9414
+page;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+page;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+page;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+page;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+page;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+page;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+pendigits;Nearest Neighbors;2;0;0
+pendigits;Linear SVM;2;0;0
+pendigits;RBF SVM;2;0;0
+pendigits;Gaussian Process;2;0;0
+pendigits;Decision Tree;2;0;0
+pendigits;Random Forest;2;0;0
+pendigits;Neural Net;2;0;0
+pendigits;AdaBoost;2;0;0
+pendigits;Naive Bayes;2;0;0
+pendigits;QDA;2;0;0
+pendigits;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+pendigits;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+pendigits;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+pendigits;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+pendigits;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+pendigits;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+quisclas;Nearest Neighbors;2;0;0
+quisclas;Linear SVM;2;0;0
+quisclas;RBF SVM;2;0;0
+quisclas;Gaussian Process;2;0;0
+quisclas;Decision Tree;2;0;0
+quisclas;Random Forest;2;0;0
+quisclas;Neural Net;2;0;0
+quisclas;AdaBoost;2;0;0
+quisclas;Naive Bayes;2;0;0
+quisclas;QDA;2;0;0
+quisclas;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+quisclas;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+quisclas;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+quisclas;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+quisclas;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+quisclas;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+satimage;Nearest Neighbors;2;0;0
+satimage;Linear SVM;2;0;0
+satimage;RBF SVM;2;0;0
+satimage;Gaussian Process;2;0;0
+satimage;Decision Tree;2;0;0
+satimage;Random Forest;2;0;0
+satimage;Neural Net;2;0;0
+satimage;AdaBoost;2;0;0
+satimage;Naive Bayes;2;0;0
+satimage;QDA;2;0;0
+satimage;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+satimage;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+satimage;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+satimage;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+satimage;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+satimage;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+segment;Nearest Neighbors;0.0013;0.9385;0.9663
+segment;Nearest Neighbors;2;0;0
+segment;Linear SVM;2;0;0
+segment;RBF SVM;2;0;0
+segment;Gaussian Process;2;0;0
+segment;Decision Tree;2;0;0
+segment;Random Forest;2;0;0
+segment;Neural Net;2;0;0
+segment;AdaBoost;2;0;0
+segment;Naive Bayes;2;0;0
+segment;QDA;0.0034;0.6195;0.616
+segment;QDA;2;0;0
+segment;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+segment;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+segment;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+segment;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+segment;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+segment;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+triazines;Nearest Neighbors;2;0;0
+triazines;Linear SVM;2;0;0
+triazines;RBF SVM;2;0;0
+triazines;Gaussian Process;2;0;0
+triazines;Decision Tree;2;0;0
+triazines;Random Forest;2;0;0
+triazines;Neural Net;2;0;0
+triazines;AdaBoost;2;0;0
+triazines;Naive Bayes;2;0;0
+triazines;QDA;2;0;0
+triazines;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+triazines;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+triazines;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+triazines;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+triazines;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+triazines;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+vehicle;Nearest Neighbors;0.0005;0.6515;0.7843
+vehicle;Linear SVM;0.0821;0.7838;0.8168
+vehicle;RBF SVM;2;0;0
+vehicle;Gaussian Process;2;0;0
+vehicle;Decision Tree;0.0042;0.7233;1.0
+vehicle;Random Forest;0.1254;0.7376;1.0
+vehicle;Random Forest;2;0;0
+vehicle;Neural Net;2;0;0
+vehicle;AdaBoost;2;0;0
+vehicle;Naive Bayes;0.0007;0.4633;0.4817
+vehicle;QDA;0.0012;0.8073;0.8839
+vehicle;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+vehicle;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+vehicle;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+vehicle;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+vehicle;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+vehicle;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+vowel;Nearest Neighbors;2;0;0
+vowel;Linear SVM;0.0119;0.6596;0.771
+vowel;Linear SVM;2;0;0
+vowel;RBF SVM;0.0139;0.7505;0.9086
+vowel;Gaussian Process;2;0;0
+vowel;Decision Tree;0.0062;0.5869;1.0
+vowel;Random Forest;2;0;0
+vowel;Neural Net;2;0;0
+vowel;AdaBoost;2;0;0
+vowel;Naive Bayes;0.0009;0.6626;0.7644
+vowel;QDA;0.0024;0.7061;0.9106
+vowel;QDA;2;0;0
+vowel;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+vowel;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+vowel;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+vowel;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+vowel;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+vowel;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+wav21;Nearest Neighbors;2;0;0
+wav21;Linear SVM;2;0;0
+wav21;RBF SVM;2;0;0
+wav21;Gaussian Process;2;0;0
+wav21;Decision Tree;2;0;0
+wav21;Random Forest;2;0;0
+wav21;Neural Net;2;0;0
+wav21;AdaBoost;2;0;0
+wav21;Naive Bayes;2;0;0
+wav21;QDA;0.0052;0.8538;0.8769
+wav21;QDA;2;0;0
+wav21;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+wav21;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+wav21;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+wav21;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+wav21;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+wav21;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+wav40;Nearest Neighbors;2;0;0
+wav40;Linear SVM;2;0;0
+wav40;RBF SVM;2;0;0
+wav40;Gaussian Process;2;0;0
+wav40;Decision Tree;2;0;0
+wav40;Random Forest;2;0;0
+wav40;Neural Net;2;0;0
+wav40;AdaBoost;2;0;0
+wav40;Naive Bayes;2;0;0
+wav40;QDA;2;0;0
+wav40;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+wav40;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+wav40;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+wav40;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+wav40;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+wav40;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+yeast;Nearest Neighbors;0.0012;0.5081;0.6759
+yeast;Linear SVM;0.0284;0.312;0.312
+yeast;Linear SVM;2;0;0
+yeast;RBF SVM;2;0;0
+yeast;Gaussian Process;2;0;0
+yeast;Decision Tree;2;0;0
+yeast;Random Forest;2;0;0
+yeast;Neural Net;2;0;0
+yeast;AdaBoost;2;0;0
+yeast;Naive Bayes;0.0011;0.1077;0.122
+yeast;QDA;0.0017;0.0811;0.0813
+yeast;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+yeast;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+yeast;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+yeast;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+yeast;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+yeast;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+cube_2classes;Nearest Neighbors;0.0008;0.7352;0.8152
+cube_2classes;Linear SVM;2;0;0
+cube_2classes;RBF SVM;2;0;0
+cube_2classes;Gaussian Process;2;0;0
+cube_2classes;Decision Tree;0.0151;0.9928;1.0
+cube_2classes;Random Forest;2;0;0
+cube_2classes;Neural Net;2;0;0
+cube_2classes;AdaBoost;2;0;0
+cube_2classes;Naive Bayes;2;0;0
+cube_2classes;QDA;0.001;0.9404;0.9452
+cube_2classes;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+cube_2classes;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+cube_2classes;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+cube_2classes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+cube_3classes;Nearest Neighbors;2;0;0
+cube_3classes;Linear SVM;2;0;0
+cube_3classes;RBF SVM;2;0;0
+cube_3classes;Gaussian Process;2;0;0
+cube_3classes;Decision Tree;0.0456;0.9432;1.0
+cube_3classes;Random Forest;2;0;0
+cube_3classes;Neural Net;2;0;0
+cube_3classes;AdaBoost;2;0;0
+cube_3classes;Naive Bayes;2;0;0
+cube_3classes;QDA;2;0;0
+cube_3classes;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+cube_3classes;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+cube_3classes;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+cube_3classes;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+cube_3classes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+cube_3classes;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+lib_cons_miss10;Nearest Neighbors;0.0006;0.941;0.9622
+lib_cons_miss10;Linear SVM;0.0057;0.864;0.8668
+lib_cons_miss10;RBF SVM;0.0088;0.978;0.9902
+lib_cons_miss10;Gaussian Process;2;0;0
+lib_cons_miss10;Decision Tree;2;0;0
+lib_cons_miss10;Random Forest;2;0;0
+lib_cons_miss10;Neural Net;2;0;0
+lib_cons_miss10;AdaBoost;2;0;0
+lib_cons_miss10;Naive Bayes;0.0006;0.969;0.9725
+lib_cons_miss10;QDA;0.0006;0.957;0.9725
+lib_cons_miss10;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss10;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+lib_cons_miss10;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss10;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+lib_cons_miss10;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss25;Nearest Neighbors;0.0011;0.855;0.9138
+lib_cons_miss25;Linear SVM;2;0;0
+lib_cons_miss25;RBF SVM;0.0098;0.95;0.981
+lib_cons_miss25;Gaussian Process;2;0;0
+lib_cons_miss25;Decision Tree;0.0017;0.954;1.0
+lib_cons_miss25;Decision Tree;2;0;0
+lib_cons_miss25;Random Forest;2;0;0
+lib_cons_miss25;Neural Net;2;0;0
+lib_cons_miss25;AdaBoost;2;0;0
+lib_cons_miss25;Naive Bayes;0.0006;0.932;0.936
+lib_cons_miss25;QDA;0.0006;0.914;0.9337
+lib_cons_miss25;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss25;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss25;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss5;Nearest Neighbors;0.0007;0.951;0.9672
+lib_cons_miss5;Linear SVM;0.0052;0.895;0.8982
+lib_cons_miss5;RBF SVM;0.0068;0.979;0.9902
+lib_cons_miss5;Gaussian Process;2;0;0
+lib_cons_miss5;Decision Tree;2;0;0
+lib_cons_miss5;Random Forest;2;0;0
+lib_cons_miss5;Neural Net;2;0;0
+lib_cons_miss5;AdaBoost;2;0;0
+lib_cons_miss5;Naive Bayes;2;0;0
+lib_cons_miss5;QDA;0.0011;0.976;0.9785
+lib_cons_miss5;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss5;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_miss5;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_sizeDiff;Nearest Neighbors;0.0009;0.981;0.987
+lib_cons_sizeDiff;Linear SVM;0.0024;0.977;0.9788
+lib_cons_sizeDiff;RBF SVM;0.0029;0.996;0.9998
+lib_cons_sizeDiff;Gaussian Process;2;0;0
+lib_cons_sizeDiff;Decision Tree;2;0;0
+lib_cons_sizeDiff;Random Forest;2;0;0
+lib_cons_sizeDiff;Neural Net;2;0;0
+lib_cons_sizeDiff;AdaBoost;2;0;0
+lib_cons_sizeDiff;Naive Bayes;2;0;0
+lib_cons_sizeDiff;QDA;0.0006;0.996;0.9978
+lib_cons_sizeDiff;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_sizeDiff;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+lib_cons_sizeDiff;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_high;Nearest Neighbors;0.0005;0.7794;0.8485
+pole_noise_high;Linear SVM;2;0;0
+pole_noise_high;RBF SVM;2;0;0
+pole_noise_high;Gaussian Process;2;0;0
+pole_noise_high;Decision Tree;0.0031;0.6929;1.0
+pole_noise_high;Decision Tree;2;0;0
+pole_noise_high;Random Forest;2;0;0
+pole_noise_high;Neural Net;2;0;0
+pole_noise_high;AdaBoost;2;0;0
+pole_noise_high;Naive Bayes;0.0006;0.6841;0.6841
+pole_noise_high;QDA;0.0004;0.6532;0.6968
+pole_noise_high;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_high;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_high;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_high;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+pole_noise_low;Nearest Neighbors;0.0005;0.8187;0.8573
+pole_noise_low;Linear SVM;2;0;0
+pole_noise_low;RBF SVM;0.047;0.8378;0.856
+pole_noise_low;RBF SVM;2;0;0
+pole_noise_low;Gaussian Process;2;0;0
+pole_noise_low;Decision Tree;0.0024;0.7328;1.0
+pole_noise_low;Random Forest;2;0;0
+pole_noise_low;Neural Net;2;0;0
+pole_noise_low;AdaBoost;2;0;0
+pole_noise_low;Naive Bayes;0.0007;0.6583;0.6583
+pole_noise_low;Naive Bayes;2;0;0
+pole_noise_low;QDA;0.0005;0.8193;0.8214
+pole_noise_low;QDA;2;0;0
+pole_noise_low;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_low;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+pole_noise_low;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_low;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_medium;Nearest Neighbors;0.0006;0.8064;0.8551
+pole_noise_medium;Nearest Neighbors;2;0;0
+pole_noise_medium;Linear SVM;2;0;0
+pole_noise_medium;RBF SVM;0.046;0.8365;0.8531
+pole_noise_medium;RBF SVM;2;0;0
+pole_noise_medium;Gaussian Process;2;0;0
+pole_noise_medium;Decision Tree;2;0;0
+pole_noise_medium;Random Forest;2;0;0
+pole_noise_medium;Neural Net;2;0;0
+pole_noise_medium;AdaBoost;2;0;0
+pole_noise_medium;Naive Bayes;2;0;0
+pole_noise_medium;QDA;0.0004;0.7163;0.727
+pole_noise_medium;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_medium;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+pole_noise_medium;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_medium;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+pole_noise_medium;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+pole_noise_medium;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+pole_normalization;Nearest Neighbors;0.0005;0.825;0.8636
+pole_normalization;Linear SVM;2;0;0
+pole_normalization;RBF SVM;2;0;0
+pole_normalization;Gaussian Process;2;0;0
+pole_normalization;Decision Tree;0.0027;0.747;1.0
+pole_normalization;Random Forest;2;0;0
+pole_normalization;Neural Net;2;0;0
+pole_normalization;AdaBoost;2;0;0
+pole_normalization;Naive Bayes;2;0;0
+pole_normalization;QDA;0.0004;0.6878;0.6923
+pole_normalization;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+pole_normalization;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+pole_normalization;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+pole_normalization;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+pole_normalization;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_2classes;Nearest Neighbors;0.0008;0.5981;0.7523
+sphere_2classes;Linear SVM;2;0;0
+sphere_2classes;RBF SVM;2;0;0
+sphere_2classes;Gaussian Process;2;0;0
+sphere_2classes;Decision Tree;0.0131;0.6093;1.0
+sphere_2classes;Random Forest;2;0;0
+sphere_2classes;Neural Net;2;0;0
+sphere_2classes;AdaBoost;2;0;0
+sphere_2classes;Naive Bayes;2;0;0
+sphere_2classes;QDA;0.0007;0.6761;0.7105
+sphere_2classes;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_2classes;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_2classes;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+sphere_2classes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_3classes;Nearest Neighbors;0.0009;0.3782;0.5747
+sphere_3classes;Linear SVM;2;0;0
+sphere_3classes;RBF SVM;2;0;0
+sphere_3classes;Gaussian Process;2;0;0
+sphere_3classes;Decision Tree;2;0;0
+sphere_3classes;Random Forest;2;0;0
+sphere_3classes;Neural Net;2;0;0
+sphere_3classes;AdaBoost;2;0;0
+sphere_3classes;Naive Bayes;2;0;0
+sphere_3classes;QDA;2;0;0
+sphere_3classes;NN-(300, 100)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_3classes;NN-(300, 100)-relu-softmax-categorical_crossentropy;2;0;0
+sphere_3classes;NN-(500, 300)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_3classes;NN-(500, 300)-relu-softmax-categorical_crossentropy;2;0;0
+sphere_3classes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;2;0;0
+sphere_3classes;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
+weapon-data;Nearest Neighbors;2;0;0
+weapon-data;Linear SVM;2;0;0
+weapon-data;Naive Bayes;2;0;0
+weapon-data;NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy;2;0;0
