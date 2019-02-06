@@ -10,6 +10,7 @@ $ cd data/weapon-data/ && bash download_data.sh && unzip *.zip && cd ../..
 $
 $ python3 -m venv venv
 $ . venv/bin/activate
+$ pip install -r requirements.txt
 $ cd src
 $ python runner.py 2>/dev/null > output/my_output.csv
 ```
