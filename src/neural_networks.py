@@ -8,6 +8,7 @@ import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
+from keras.utils import to_categorical
 
 """https://stackoverflow.com/a/50566908/3394494"""
 
@@ -62,6 +63,9 @@ class KerasWrapper:
         )
 
         precision = as_keras_metric(tf.metrics.precision)
+
+        if self._n_outputs == 1 and self._loss == "categorical_crossentropy":
+            self._loss = "binary_crossentropy"
 
         self._model.compile(
             loss=self._loss, optimizer="adam", metrics=["acc", precision]

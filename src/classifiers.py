@@ -118,7 +118,7 @@ for set_name, X, y, y_bin in metal_data:
         saver.save_output(results, set_name)
 
 # IMAGE DATA
-if args["dataset_str"] != "weapon-data":
+if args["dataset_str"] == "weapon-data":
     # Load & preprocess data
     image_data, image_labels, y_bin = DataLoader().get_image_data(args["data_dir"])
     image_data = preprocess_input(image_data)

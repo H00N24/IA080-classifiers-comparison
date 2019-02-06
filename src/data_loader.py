@@ -208,7 +208,7 @@ class Saver:
                 sep=";",
                 flush=True,
             )
-            exit(0)
+            #exit(0)
         # pprint(results)
 
     def _save_output(self, results, set_name):
