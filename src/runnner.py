@@ -3,7 +3,8 @@ import os
 from itertools import product, chain
 
 
-TIMEOUT = 2
+# 10 minutes
+TIMEOUT = 10 * 60
 
 classifier_names = (
     "Nearest Neighbors",
