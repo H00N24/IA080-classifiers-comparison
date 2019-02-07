@@ -14,7 +14,9 @@ $ pip install -r requirements.txt
 $ cd src
 $ python runner.py 2>/dev/null > output/my_output.csv
 ```
-
+```
+$ nice -n 15 taskset -c 5-6 \time -v -o time_stats.txt python runnner.py > output/aura_output.csv
+```
 
 ### XCDG data generator
 In the `/generator` folder you can find the XCDG.jar along with example input files used for the creation of data in `/extra-data`. The generator can be called from the command line with
