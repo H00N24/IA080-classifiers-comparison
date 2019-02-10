@@ -35,7 +35,14 @@ class KerasWrapper:
         self._layers = layers
         self._act_hidden_layers = act_hidden_layers
         self._act_output_layer = act_output_layer_loss[0]
-        self._loss = act_output_layer_loss[1]
+        self._name_loss = act_output_layer_loss[1]
+        if self._name_loss == "crossentropy":
+            if self._n_outputs == 1:
+                self._loss = "binary_crossentropy"
+            else:
+                self._loss = "categorical_crossentropy"
+        else:
+            self._loss = self._name_loss
         self._create_model()
 
     def _create_model(self):
@@ -123,7 +130,10 @@ class KerasWrapper:
 
     def name(self):
         return "NN-{}-{}-{}-{}".format(
-            self._layers, self._act_hidden_layers, self._act_output_layer, self._loss
+            self._layers,
+            self._act_hidden_layers,
+            self._act_output_layer,
+            self._name_loss,
         )
 
 

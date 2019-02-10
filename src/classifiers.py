@@ -58,10 +58,7 @@ sets = (
 
 layers = ((300, 100), (500, 300), (500, 500, 2000))
 act_hidden = ("relu",)
-act_output_loss = (
-    ("sigmoid", "mean_squared_error"),
-    ("softmax", "categorical_crossentropy"),
-)
+act_output_loss = (("sigmoid", "mean_squared_error"), ("softmax", "crossentropy"))
 networks = product(layers, act_hidden, act_output_loss)
 
 if args["create_names"]:
@@ -93,7 +90,7 @@ for set_name, X, y, y_bin in metal_data:
             X,
             y,
             cv=5,
-            n_jobs=2,
+            n_jobs=-1,
             scoring=({"accuracy": make_scorer(accuracy_score)}),
             error_score=np.nan,
             return_train_score=True,
@@ -106,6 +103,8 @@ for set_name, X, y, y_bin in metal_data:
 
         # Save result
         saver.save_output(results, set_name)
+        if args["classifier_str"] and name == args["classifier_str"]:
+            exit(0)
 
     for params in networks:
         if args["classifier_str"] and create_name(*params) != args["classifier_str"]:
@@ -116,6 +115,8 @@ for set_name, X, y, y_bin in metal_data:
         results = model.cross_validate(X, y, y_bin)
 
         saver.save_output(results, set_name)
+        if args["classifier_str"] and create_name(*params) == args["classifier_str"]:
+            exit(0)
 
 # IMAGE DATA
 if args["dataset_str"] == "weapon-data":
@@ -135,7 +136,7 @@ if args["dataset_str"] == "weapon-data":
             features,
             image_labels,
             cv=5,
-            n_jobs=2,
+            n_jobs=-1,
             scoring=({"accuracy": make_scorer(accuracy_score)}),
             error_score=np.nan,
             return_train_score=True,
@@ -148,6 +149,8 @@ if args["dataset_str"] == "weapon-data":
 
         # Save result
         saver.save_output(results, "weapon-data")
+        if args["classifier_str"] and name == args["classifier_str"]:
+            exit(0)
 
     for params in networks:
         if args["classifier_str"] and create_name(*params) != args["classifier_str"]:
@@ -158,3 +161,5 @@ if args["dataset_str"] == "weapon-data":
         results = model.cross_validate(features, image_labels, y_bin)
 
         saver.save_output(results, "weapon-data")
+        if args["classifier_str"] and create_name(*params) == args["classifier_str"]:
+            exit(0)

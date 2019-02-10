@@ -18,11 +18,11 @@ classifier_names = (
     "Naive Bayes",
     "QDA",
     "NN-(300, 100)-relu-sigmoid-mean_squared_error",
-    "NN-(300, 100)-relu-softmax-categorical_crossentropy",
+    "NN-(300, 100)-relu-softmax-crossentropy",
     "NN-(500, 300)-relu-sigmoid-mean_squared_error",
-    "NN-(500, 300)-relu-softmax-categorical_crossentropy",
+    "NN-(500, 300)-relu-softmax-crossentropy",
     "NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error",
-    "NN-(500, 500, 2000)-relu-softmax-categorical_crossentropy",
+    "NN-(500, 500, 2000)-relu-softmax-crossentropy",
 )
 
 metal_dir = "../data/metal-data/"
@@ -45,7 +45,7 @@ datasets = chain(
     )
 )
 
-print("Dataset;Classifier;Fit time;Test accuracy;Train accuracy")
+print("Dataset;Classifier;Fit time;Test accuracy;Train accuracy", flush=True)
 
 for dataset_data, name in product(datasets, classifier_names):
     command = [
@@ -66,4 +66,3 @@ for dataset_data, name in product(datasets, classifier_names):
         e
         print(dataset_data[1], name, TIMEOUT, 0, 0, sep=";", flush=True)
         continue
-

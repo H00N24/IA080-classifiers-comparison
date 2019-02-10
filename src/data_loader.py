@@ -30,6 +30,8 @@ class DataLoader:
         cat_counter = []
         image_paths = []
         for cat_path in glob.glob(data_dir + "/*"):
+            if not os.path.isdir(cat_path):
+                continue
             cat_list = [
                 cat_path + "/" + image_name for image_name in os.listdir(cat_path)
             ]
@@ -208,8 +210,6 @@ class Saver:
                 sep=";",
                 flush=True,
             )
-            #exit(0)
-        # pprint(results)
 
     def _save_output(self, results, set_name):
         path = "output/"
