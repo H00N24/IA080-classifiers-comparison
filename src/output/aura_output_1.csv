@@ -575,3 +575,19 @@ sphere_3classes;NN-(500, 300)-relu-sigmoid-mean_squared_error;8.1824;0.3669;0.41
 sphere_3classes;NN-(500, 300)-relu-softmax-crossentropy;9.3567;0.3974;0.4148
 sphere_3classes;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;33.3928;0.3978;0.4088
 sphere_3classes;NN-(500, 500, 2000)-relu-softmax-crossentropy;26.4749;0.3844;0.4022
+weapon;Nearest Neighbors;0.0687;0.9079;0.9358
+weapon;Linear SVM;1.0408;0.8648;0.8776
+weapon;RBF SVM;0.8592;0.8805;0.8832
+weapon;Gaussian Process;31.9159;0.9225;0.9544
+weapon;Decision Tree;1.0882;0.8945;1.0
+weapon;Random Forest;2.0509;0.9428;1.0
+weapon;Neural Net;10.1926;0.9167;0.943
+weapon;AdaBoost;6.6041;0.9463;0.9917
+weapon;Naive Bayes;0.0416;0.5544;0.5954
+weapon;QDA;0.6706;0.8006;1.0
+weapon;NN-(300, 100)-relu-sigmoid-mean_squared_error;2.2278;0.9021;0.8734
+weapon;NN-(300, 100)-relu-softmax-crossentropy;1.6286;0.5;0.5
+weapon;NN-(500, 300)-relu-sigmoid-mean_squared_error;3.3511;0.9131;0.8667
+weapon;NN-(500, 300)-relu-softmax-crossentropy;2.2632;0.5;0.5
+weapon;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;12.6211;0.8992;0.8642
+weapon;NN-(500, 500, 2000)-relu-softmax-crossentropy;5.6621;0.5;0.5
