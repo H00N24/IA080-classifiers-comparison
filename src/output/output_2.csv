@@ -24,6 +24,14 @@ triazines;NN-(300, 100)-relu-sigmoid-mean_squared_error;15.5778;0.8222;0.7713
 triazines;NN-(500, 300)-relu-sigmoid-mean_squared_error;35.7229;0.8194;0.778
 triazines;NN-(500, 500, 2000)-relu-sigmoid-mean_squared_error;304.9767;0.8231;0.7823
 triazines;NN-(500, 500, 2000)-relu-softmax-crossentropy;70.4441;0.5;0.5
+vehicle;Gaussian Process;51.52;0.5934;0.9179
 vowel;Gaussian Process;71.5514;0.7636;1.0
+wav40;Gaussian Process;108.9603;0.767;1.0
+yeast;Gaussian Process;183.7473;0.5417;0.6071
 cube_3classes;Linear SVM;203.3218;0.4107;0.4107
 cube_3classes;Gaussian Process;77.3767;0.4107;1.0
+pole_noise_high;Gaussian Process;21.266;0.6841;0.6841
+pole_noise_low;Gaussian Process;34.3182;0.7339;0.7339
+pole_noise_medium;Gaussian Process;30.8802;0.7059;0.7035
+pole_normalization;Gaussian Process;36.3159;0.7253;0.7292
+sphere_3classes;Gaussian Process;20.9546;0.3459;1.0
